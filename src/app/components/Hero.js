@@ -69,7 +69,7 @@ export default function Hero() {
             <h2 className="text-2xl font-semibold text-center">{message}</h2>
           ) : (
             <>
-              <h2 className="text-2xl font-semibold mb-4 text-center">Let's Get Started</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-center">Let&apos;s Get Started</h2>
               <form className="space-y-4">
                 <input
                   type="email"

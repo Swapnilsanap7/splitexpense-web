@@ -55,7 +55,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Have questions about SplitExpense? We'd love to hear from you.
+            Have questions about SplitExpense? We&apos;d love to hear from you.
           </motion.p>
         </div>
 
@@ -74,7 +74,7 @@ export default function Contact() {
                 <div className="text-4xl mb-4">✅</div>
                 <h3 className="text-xl font-semibold text-green-500 mb-2">Message Sent!</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Thank you for reaching out. We'll get back to you soon!
+                  Thank you for reaching out. We&apos;ll get back to you soon!
                 </p>
               </div>
             ) : (
@@ -193,7 +193,7 @@ export default function Contact() {
                     How does expense splitting work?
                   </summary>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                    Simply create a group, add expenses, and we'll automatically calculate who owes what to whom.
+                    Simply create a group, add expenses, and we&apos;ll automatically calculate who owes what to whom.
                   </p>
                 </details>
                 
