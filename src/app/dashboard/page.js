@@ -1,9 +1,12 @@
 "use client";
 
-import { useAuth } from '@/app/context/AuthContext';
+export const dynamic = "force-dynamic";
+
+import { useAuth } from "@/app/context/AuthContext";
 
 export default function Dashboard() {
-    const { user, loginAsGuest, guestLoading } = useAuth();
+    const auth = useAuth() || {};  // <-- prevents undefined crash
+    const { user, loginAsGuest, guestLoading } = auth;
 
     if (!user) {
         return (
@@ -18,7 +21,7 @@ export default function Dashboard() {
                         disabled={guestLoading}
                         className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg transition-colors"
                     >
-                        {guestLoading ? '🔄 Signing in...' : 'Continue as Guest'}
+                        {guestLoading ? "🔄 Signing in..." : "Continue as Guest"}
                     </button>
                 </div>
             </div>
@@ -32,8 +35,8 @@ export default function Dashboard() {
                 <div className="mb-8">
                     <h1 className="text-4xl font-bold mb-2">Dashboard</h1>
                     <p className="text-gray-600 dark:text-gray-300">
-                        Welcome back{user.email ? `, ${user.email.split('@')[0]}` : ''}! 
-                        {user.isAnonymous && ' (Guest User)'}
+                        Welcome back{user.email ? `, ${user.email.split("@")[0]}` : ""}!
+                        {user.isAnonymous && " (Guest User)"}
                     </p>
                 </div>
 
@@ -44,13 +47,13 @@ export default function Dashboard() {
                         <p className="text-3xl font-bold text-blue-500">$0.00</p>
                         <p className="text-sm text-gray-500 mt-1">Coming Soon</p>
                     </div>
-                    
+
                     <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
                         <h3 className="text-lg font-semibold mb-2">Active Groups</h3>
                         <p className="text-3xl font-bold text-green-500">0</p>
                         <p className="text-sm text-gray-500 mt-1">Coming Soon</p>
                     </div>
-                    
+
                     <div className="bg-white/10 backdrop-blur-md rounded-lg p-6">
                         <h3 className="text-lg font-semibold mb-2">Pending Settlements</h3>
                         <p className="text-3xl font-bold text-orange-500">$0.00</p>
