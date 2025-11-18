@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SplitExpense (Frontend)
 
-## Getting Started
+This repository contains the frontend for SplitExpense an expense-splitting web application built with Next.js.
 
-First, run the development server:
+**Important:** This is the frontend-only repository (UI). The backend (API, database, and server-side components) and any backend-driven UI integration will be implemented later and tracked separately.
 
-```bash
+## Current status
+- Frontend (UI) implemented with Next.js (App Router) and React.
+- No backend API or persistent data storage is included in this repository yet.
+
+## Key features (frontend)
+- Next.js App Router structure in `src/app`
+- Reusable UI components in `src/app/components`
+- Client-side authentication scaffold in `src/context/AuthContext.js`
+- Firebase client helper in `lib/firebase.js` (placeholder for future integration)
+
+## Tech stack
+- Frontend: Next.js, React
+- Styling: TailwindCSS
+- Optional: Firebase client SDK
+
+## Project structure (high level)
+- `src/app/` — Next.js app directory (pages, layout, global styles)
+	- `src/app/page.js` — main landing page
+	- `src/app/layout.js` — top-level layout
+	- `src/app/components/` — UI components (Navbar, Hero, Footer, etc.)
+- `src/context/AuthContext.js` — frontend auth context
+- `lib/firebase.js` — firebase initialization (client-side helper)
+- `public/` — static assets
+
+## Development (run locally)
+From the project root run:
+
+```powershell
+cd "D:\Project\WebAppProjects\splitexpense"
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser. If you prefer `yarn` or `pnpm`, substitute the appropriate install/run commands.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```powershell
+npm run build
+npm run start
+```
 
-## Learn More
+## Backend & future work
+This repository is intentionally frontend-focused. Planned backend work (to be added later) includes:
+- Authentication backend and secure session handling
+- Persistent storage for users, expenses, and groups
+- Server-side validation and business logic
 
-To learn more about Next.js, take a look at the following resources:
+Frontend components are designed to call API endpoints (for example `/api/expenses`) once the backend is available.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
+- Deploy the frontend to Vercel or Netlify. Vercel supports the Next.js App Router out-of-the-box.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
