@@ -142,23 +142,6 @@ The current dashboard includes:
 - Receipt scanning and OCR
 - Expense analytics and reporting
 
-## 🚀 Deployment
-
-### Vercel (Recommended)
-This project is optimized for Vercel deployment:
-
-```bash
-# Deploy to Vercel
-npm run build
-```
-
-Connect your GitHub repository to Vercel for automatic deployments.
-
-### Alternative Platforms
-- **Netlify:** Supports Next.js with build command `npm run build`
-- **Railway:** Direct deployment from GitHub
-- **Docker:** Dockerfile can be added for containerized deployment
-
 ### Environment Variables
 Ensure all `NEXT_PUBLIC_FIREBASE_*` variables are configured in your deployment platform.
 
